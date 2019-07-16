@@ -12,11 +12,12 @@ public class FirstExample {
 
         WebDriver webDriver = DriverManager.getInstance().getWebDriver();
         webDriver.get(PropertyAccesor.getInstance().getURL()); //URL
+        webDriver.quit();
 
-        Login login = new Login();
-        login.setEmail("admin@phptravels.com");
-        login.setPassword("demoadmin");
-        login.click();
+        //Login login = new Login();
+        //login.setEmail("admin@phptravels.com");
+        //login.setPassword("demoadmin");
+        //login.click();
     }
 
     public static void exampleMap(){

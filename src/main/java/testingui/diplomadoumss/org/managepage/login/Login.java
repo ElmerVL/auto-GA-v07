@@ -1,14 +1,10 @@
 package testingui.diplomadoumss.org.managepage.login;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 
-/**
- * @author Marcelo Garay
- * @project testingui.diplomadoumss.org
- */
 public class Login extends BasePage {
 
     @FindBy(xpath = "//input[@name='email' and @type='text']")
@@ -30,5 +26,12 @@ public class Login extends BasePage {
 
     public void click() {
         loginButton.click();
+    }
+
+    public Dashboard setCredentials() {
+        this.setEmail("admin@phptravels.com");
+        this.setPassword("demoadmin");
+        this.click();
+        return new Dashboard();
     }
 }
