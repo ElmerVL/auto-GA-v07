@@ -17,7 +17,7 @@ public class FirstExample {
         //Login login = new Login();
         //login.setEmail("admin@phptravels.com");
         //login.setPassword("demoadmin");
-        //login.click();
+        //login.clickLogin();
     }
 
     public static void exampleMap(){

@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
+import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
+
+import static testingui.diplomadoumss.org.manageevents.Event.*;
 
 public class Login extends BasePage {
 
@@ -16,22 +19,28 @@ public class Login extends BasePage {
     @FindBy(xpath="//button[@type='submit']")
     private WebElement loginButton;
 
-    public void setEmail(String email){
-        emailTextField.sendKeys(email);
+    public Login() {
+        avoidToSecond(2);
     }
 
-    public void setPassword(String password){
-        passwordTextField.sendKeys(password);
+    public Login setEmail(String email) {
+        fielWebElement(emailTextField, email);
+        return this;
     }
 
-    public void click() {
-        loginButton.click();
+    public Login setPassword(String password){
+        fielWebElement(passwordTextField, password);
+        return this;
+    }
+
+    public Dashboard clickLogin() {
+        clickWebElement(loginButton);
+        return new Dashboard();
     }
 
     public Dashboard setCredentials() {
-        this.setEmail("admin@phptravels.com");
-        this.setPassword("demoadmin");
-        this.click();
-        return new Dashboard();
+        return setEmail(PropertyAccesor.getInstance().getEmail())
+                .setPassword(PropertyAccesor.getInstance().getPassword())
+                .clickLogin();
     }
 }

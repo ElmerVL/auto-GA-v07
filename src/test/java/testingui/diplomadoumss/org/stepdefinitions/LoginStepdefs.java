@@ -1,4 +1,4 @@
-package testingui.diplomadoumss.org.stepsdefinitions;
+package testingui.diplomadoumss.org.stepdefinitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -27,7 +27,6 @@ public class LoginStepdefs {
 
     @And("^Click 'Cars' link on 'Left Panel' Page$")
     public void clickCarsLinkOnLeftPanelPage() throws  Throwable {
-        dashboard.clickAccountsExpand();
-        dashboard.clickAdmindsOption();
+        //leftPanel = dashboard.setLeftPanel();
     }
 }
