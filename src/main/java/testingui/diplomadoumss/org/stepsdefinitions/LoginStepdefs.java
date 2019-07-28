@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.stepsdefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -82,5 +83,60 @@ public class LoginStepdefs {
     @And("^Click 'First Name' column on header list to 'asc' order$")
     public void clickFirstNameColumnOnHeaderListToAscOrder() {
         dashboard.clickAscOrderFirstNameColumnOption();
+    }
+
+    @And("^Click 'Last Name' column on header list to 'desc' order$")
+    public void clickLastNameColumnOnHeaderListToDescOrder() throws Throwable {
+        dashboard.clickAscOrderLastNameColumnOption();
+    }
+
+    @And("^Click 'Last Name' column on header list to 'asc' order$")
+    public void clickLastNameColumnOnHeaderListToAscOrder() throws Throwable {
+        dashboard.clickDescOrderLastNameColumnOption();
+    }
+
+    @And("^Click 'Email' column on header list to 'desc' order$")
+    public void clickEmailColumnOnHeaderListToDescOrder() throws Throwable {
+        dashboard.clickAscOrderEmailColumnOption();
+    }
+
+    @And("^Click 'Email' column on header list to 'asc' order$")
+    public void clickEmailColumnOnHeaderListToAscOrder() throws Throwable {
+        dashboard.clickDescOrderEmailColumnOption();
+    }
+
+    @And("^Click 'Active' column on header list to 'desc' order$")
+    public void clickActiveColumnOnHeaderListToDescOrder() throws Throwable {
+        dashboard.clickAscOrderActiveColumnOption();
+    }
+
+    @And("^Click 'Active' column on header list to 'asc' order$")
+    public void clickActiveColumnOnHeaderListToAscOrder() throws Throwable {
+        dashboard.clickDescOrderActiveColumnOption();
+    }
+
+    @And("^Click 'Last Login' column on header list to 'desc' order$")
+    public void clickLastLoginColumnOnHeaderListToDescOrder() throws Throwable {
+        dashboard.clickAscOrderLastLoginColumnOption();
+    }
+
+    @And("^Click 'Last Login' column on header list to 'asc' order$")
+    public void clickLastLoginColumnOnHeaderListToAscOrder() throws Throwable {
+        dashboard.clickDescOrderLastLoginColumnOption();
+    }
+
+    @And("^Click 'EDIT' button on 'admin management' page$")
+    public void clickEDITButtonOnAdminManagementPage() throws Throwable {
+        dashboard.clickEditOption();
+    }
+
+    @And("^Click 'DELETE' button on 'admin management' page$")
+    public void clickDELETEButtonOnAdminManagementPage() throws Throwable {
+        dashboard.clickDeleteOption();
+    }
+
+    @And("^Click 'ADD' button on 'admin management' page$")
+    public void clickADDButtonOnAdminManagementPage() throws Throwable {
+        dashboard.clickAddption();
     }
 }

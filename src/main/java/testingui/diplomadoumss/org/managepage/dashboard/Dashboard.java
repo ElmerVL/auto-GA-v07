@@ -36,6 +36,38 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.ai_first_name']")
     private WebElement clickAscOrderFirstNameColumn;
 
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.ai_last_name']")
+    private WebElement clickDescOrderLastNameColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.ai_last_name']")
+    private WebElement clickAscOrderLastNameColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.accounts_email']")
+    private WebElement clickDescOrderEmailColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.accounts_email']")
+    private WebElement clickAscOrderEmailColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.accounts_status']")
+    private WebElement clickDescOrderActiveColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.accounts_status']")
+    private WebElement clickAscOrderActiveColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.accounts_last_login']")
+    private WebElement clickDescOrderLastLoginColumn;
+
+    @FindBy(xpath = "//tr[@class='xcrud-th']//th[@data-orderby='pt_accounts.accounts_last_login']")
+    private WebElement clickAscOrderLastLoginColumn;
+
+    @FindBy(xpath = "//td//span[@class='btn-group']//a[@title='Edit' and @href='https://www.phptravels.net/admin-portal/admin/accounts/admins/edit/323']")
+    private WebElement editClicked;
+
+    @FindBy(xpath = "//td//span[@class='btn-group']//a[@title='DELETE' and @id='323']")
+    private WebElement deleteClicked;
+
+    @FindBy(xpath = "//button[@class='btn btn-success' and @type='submit' and contains(text(), 'Add')]")
+    private WebElement addClicked;
 
     public Dashboard() {
         //isWebElementVisible(bookingLink);
@@ -81,6 +113,69 @@ public class Dashboard extends BasePage {
     public Dashboard clickAscOrderFirstNameColumnOption() {
         avoidToSecond(3);
         clickWebElement(clickAscOrderFirstNameColumn);
+        return this;
+    }
+
+    public Dashboard clickDescOrderLastNameColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickDescOrderLastNameColumn);
+        return this;
+    }
+
+    public Dashboard clickAscOrderLastNameColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickAscOrderLastNameColumn);
+        return this;
+    }
+
+    public Dashboard clickDescOrderEmailColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickDescOrderEmailColumn);
+        return this;
+    }
+
+    public Dashboard clickAscOrderEmailColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickAscOrderEmailColumn);
+        return this;
+    }
+
+    public Dashboard clickDescOrderActiveColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickDescOrderActiveColumn);
+        return this;
+    }
+
+    public Dashboard clickAscOrderActiveColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickAscOrderActiveColumn);
+        return this;
+    }
+
+    public Dashboard clickDescOrderLastLoginColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickDescOrderLastLoginColumn);
+        return this;
+    }
+
+    public Dashboard clickAscOrderLastLoginColumnOption() {
+        avoidToSecond(3);
+        clickWebElement(clickAscOrderLastLoginColumn);
+        return this;
+    }
+
+    public Dashboard clickEditOption() {
+        clickWebElement(editClicked);
+        return this;
+    }
+
+    public Dashboard clickDeleteOption() {
+        clickWebElement(deleteClicked);
+        return this;
+    }
+
+    public Dashboard clickAddption() {
+        clickWebElement(addClicked);
         return this;
     }
 }

@@ -1,37 +1,84 @@
 Feature: Validation of the login page
   # Elmer Valencia Ledezma
   # 1
+  Scenario: Validate “ADD” button enables the ADD ADMIN form.
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Accounts' link on 'Left Panel' Page
+    And Click 'Admins' link on 'Accounts Expand'
+    And Click 'ADD' button on 'admin management' page
+  # 2
   Scenario: Validate 'PRINT' button in the 'ADMINS MANAGEMENT' page
     Given I Load PHP Travels
     And Set my credentials on 'Login' page
     And Click 'Accounts' link on 'Left Panel' Page
     And Click 'Admins' link on 'Accounts Expand'
     And Click 'PRINT' button on 'admin management' page
-  # 2
+  # 3
   Scenario: Validate 'EXPORT INTO CSV' button in the 'ADMINS MANAGEMENT' page
     Given I Load PHP Travels
     And Set my credentials on 'Login' page
     And Click 'Accounts' link on 'Left Panel' Page
     And Click 'Admins' link on 'Accounts Expand'
     And Click 'EXPORT INTO CSV' button on 'admin management' page
-  # 3
+  # 4
   Scenario: Validate 'CHECK ALL' checkbox to select all admins
     Given I Load PHP Travels
     And Set my credentials on 'Login' page
     And Click 'Accounts' link on 'Left Panel' Page
     And Click 'Admins' link on 'Accounts Expand'
     And Click 'Check All' checkbox on header list
-  # 4
-  Scenario: Validate 'DESC' and 'ASC' order option when select the 'First Name' column
+  # 5
+  Scenario: Validate 'DESC' and 'ASC' order option when select each column
     Given I Load PHP Travels
     And Set my credentials on 'Login' page
     And Click 'Accounts' link on 'Left Panel' Page
     And Click 'Admins' link on 'Accounts Expand'
     And Click 'First Name' column on header list to 'desc' order
     And Click 'First Name' column on header list to 'asc' order
-
-  #Scenario: Validate "Login" label in the LOGIN page
-    #Given I Load PHP Travels
-    #And fill "test@test.com" email field on 'Login' page
-    #And fill "test@test.com" password field on 'Login' page
-    #Then verify the "Login" label button is displayed on 'Login' page
+    And Click 'Last Name' column on header list to 'desc' order
+    And Click 'Last Name' column on header list to 'asc' order
+    And Click 'Email' column on header list to 'desc' order
+    And Click 'Email' column on header list to 'asc' order
+    And Click 'Active' column on header list to 'desc' order
+    And Click 'Active' column on header list to 'asc' order
+    And Click 'Last Login' column on header list to 'desc' order
+    And Click 'Last Login' column on header list to 'asc' order
+  # 6
+  Scenario: Validate 'EDIT' button in the 'ADMINS MANAGEMENT' page
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Accounts' link on 'Left Panel' Page
+    And Click 'Admins' link on 'Accounts Expand'
+    And Click 'EDIT' button on 'admin management' page
+  # 7
+  Scenario: Validate that display 'ALERT' when try to delete a admin
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Accounts' link on 'Left Panel' Page
+    And Click 'Admins' link on 'Accounts Expand'
+    And Click 'DELETE' button on 'admin management' page
+  # 8
+  Scenario: Validate the 'Pagination' of the list change the list
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Accounts' link on 'Left Panel' Page
+    And Click 'Admins' link on 'Accounts Expand'
+    And Click 'First Name' column on header list to 'desc' order
+    And Click 'First Name' column on header list to 'asc' order
+  # 9
+  Scenario: Validate 'SEARCH' Button enables the Search form.
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Accounts' link on 'Left Panel' Page
+    And Click 'Admins' link on 'Accounts Expand'
+    And Click 'First Name' column on header list to 'desc' order
+    And Click 'First Name' column on header list to 'asc' order
+  # 10
+  Scenario: Validate 'GO' Button in the search form
+    Given I Load PHP Travels
+    And Set my credentials on 'Login' page
+    And Click 'Accounts' link on 'Left Panel' Page
+    And Click 'Admins' link on 'Accounts Expand'
+    And Click 'First Name' column on header list to 'desc' order
+    And Click 'First Name' column on header list to 'asc' order
