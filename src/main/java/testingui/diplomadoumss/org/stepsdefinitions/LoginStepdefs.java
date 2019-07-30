@@ -9,6 +9,9 @@ import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.adminsmanagement.AdminsManagement;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
+import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
+
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToSecond;
 
 public class LoginStepdefs {
 
@@ -17,6 +20,8 @@ public class LoginStepdefs {
     private Dashboard dashboard;
 
     private AdminsManagement adminsManagement;
+
+    private NasaPage nasaPage;
 
     @Given("^I Load PHP Travels$")
     public void iLoadPHPTravels() throws Throwable {
@@ -138,5 +143,32 @@ public class LoginStepdefs {
     @And("^Click 'ADD' button on 'admin management' page$")
     public void clickADDButtonOnAdminManagementPage() throws Throwable {
         dashboard.clickAddption();
+    }
+
+    @Given("^I load API NASA Page$")
+    public void iLoadAPINASAPage() {
+        nasaPage = LoadPage.loadApiNasa();
+    }
+
+    @And("^Click NASA API Listing$")
+    public void clickNASAAPIListing() {
+        nasaPage.clickNasaApiListingOption();
+    }
+
+    @And("^Click NASA API Listing One More$")
+    public void clickNASAAPIListingOneMore() {
+        avoidToSecond(3);
+        nasaPage.clickNasaApiListingOption();
+    }
+
+    @And("^click Earth Option on Left Panel$")
+    public void clickEarthOptionOnLeftPanel() {
+        avoidToSecond(3);
+        nasaPage.clickEarthOption();
+    }
+
+    @And("^click Imagery Option On Sub Menu$")
+    public void clickImageryOptionOnSubMenu() {
+        nasaPage.clickImageryOption();
     }
 }
