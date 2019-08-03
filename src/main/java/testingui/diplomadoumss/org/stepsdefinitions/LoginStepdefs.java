@@ -8,6 +8,7 @@ import org.testng.Assert;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.adminsmanagement.AdminsManagement;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
+import testingui.diplomadoumss.org.managepage.header.Header;
 import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.managepage.nasapage.NasaPage;
 
@@ -22,6 +23,8 @@ public class LoginStepdefs {
     private AdminsManagement adminsManagement;
 
     private NasaPage nasaPage;
+
+    private Header header;
 
     @Given("^I Load PHP Travels$")
     public void iLoadPHPTravels() throws Throwable {
@@ -70,9 +73,9 @@ public class LoginStepdefs {
         Assert.assertEquals(loginLabelButtonCurrent, loginLabelButton, "Login page is verifying the 'LOGIN' label button.");
     }
 
-    @And("^Click 'Check All' checkbox on header list$")
+    @And("^Click 'All' button to display all admins$")
     public void clickCheckAllCheckboxOnHeaderList() {
-        dashboard.clickCheckboxAllOption();
+        dashboard.clickAllOption();
     }
 
     @And("^Click 'EXPORT INTO CSV' button on 'admin management' page$")
@@ -132,17 +135,17 @@ public class LoginStepdefs {
 
     @And("^Click 'EDIT' button on 'admin management' page$")
     public void clickEDITButtonOnAdminManagementPage() throws Throwable {
-        dashboard.clickEditOption();
+        dashboard.clickEditOption(false);
     }
 
     @And("^Click 'DELETE' button on 'admin management' page$")
     public void clickDELETEButtonOnAdminManagementPage() throws Throwable {
-        dashboard.clickDeleteOption();
+        dashboard.clickDeleteOption(false);
     }
 
     @And("^Click 'ADD' button on 'admin management' page$")
     public void clickADDButtonOnAdminManagementPage() throws Throwable {
-        dashboard.clickAddption();
+        dashboard.clickAddOption();
     }
 
     @Given("^I load API NASA Page$")
@@ -170,5 +173,53 @@ public class LoginStepdefs {
     @And("^click Imagery Option On Sub Menu$")
     public void clickImageryOptionOnSubMenu() {
         nasaPage.clickImageryOption();
+    }
+
+    @And("^Click '10' button to display the list on 10 to 10$")
+    public void click10ButtonToDisplayTheListOn10To10() {
+        dashboard.clickNumber10Option();
+    }
+
+    @And("^Click '25' button to display the list on 25 to 25$")
+    public void click25ButtonToDisplayTheListOn25To25() {
+        avoidToSecond(3);
+        dashboard.clickNumber25Option();
+    }
+
+    @And("^Click '50' button to display the list on 50 to 50$")
+    public void click50ButtonToDisplayTheListOn50To50() {
+        avoidToSecond(3);
+        dashboard.clickNumber50Option();
+    }
+
+    @And("^Click '100' button to display the list on 100 to 100$")
+    public void click100ButtonToDisplayTheListOn100To100() {
+        avoidToSecond(3);
+        dashboard.clickNumber100Option();
+    }
+
+    @And("^Click 'SEARCH' button to display the SEARCH form$")
+    public void clickSEARCHButtonToDisplayTheSEARCHForm() {
+        dashboard.clickSearchOption();
+    }
+
+    @And("^Set parameters on 'SEARCH' form$")
+    public void setParametersOnSEARCHForm() {
+        avoidToSecond(2);
+        dashboard.setPhrase("Raul");
+
+    }
+
+    @And("^Click 'GO' button to search$")
+    public void clickGOButtonToSearch() {
+        avoidToSecond(2);
+        dashboard.clickGoOption();
+        avoidToSecond(3);
+        dashboard.clickResetOption();
+    }
+
+    @And("^Click 'Logout' button on 'Header' page$")
+    public void clickLogoutButtonOnHeaderPage() {
+        dashboard.logoutLink();
     }
 }
